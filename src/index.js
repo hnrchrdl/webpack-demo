@@ -1,13 +1,19 @@
-import _ from 'lodash';
-import './style.css';
+import _ from "lodash";
+import "./style.css";
+import webpackLogo from "./wp.png";
 
 function component() {
-    const element = document.createElement('div');
+  const element = document.createElement("div");
 
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
+  element.innerHTML = _.join(["Hello", "webpack"], " ");
+  element.classList.add("hello");
 
-    return element;
-  }
+  const wplogo = new Image();
+  wplogo.src = webpackLogo;
 
-  document.body.appendChild(component());
+  element.appendChild(wplogo);
+
+  return element;
+}
+
+document.body.appendChild(component());
