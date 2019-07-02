@@ -11,10 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "css-loader": "^3.0.0",
+    "csv-loader": "^3.0.2",
     "file-loader": "^4.0.0",
     "lodash": "^4.17.11",
     "style-loader": "^0.23.1",
     "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.5",
+    "xml-loader": "^1.2.1"
   }
 }

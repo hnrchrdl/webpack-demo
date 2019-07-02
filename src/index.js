@@ -1,6 +1,7 @@
 import _ from "lodash";
 import "./style.css";
 import webpackLogo from "./wp.png";
+import Data from './data.xml';
 
 function component() {
   const element = document.createElement("div");
@@ -12,6 +13,8 @@ function component() {
   wplogo.src = webpackLogo;
 
   element.appendChild(wplogo);
+
+  console.log(Data);
 
   return element;
 }
