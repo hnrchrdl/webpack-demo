@@ -12,7 +12,6 @@ function component() {
 
   element.appendChild(btn);
 
-
   return element;
 }
 

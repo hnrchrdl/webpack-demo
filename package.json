@@ -5,6 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open",
     "build": "webpack"
   },
   "author": "",
@@ -19,6 +21,7 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2",
     "webpack-manifest-plugin": "^2.0.4",
     "xml-loader": "^1.2.1"
   }
