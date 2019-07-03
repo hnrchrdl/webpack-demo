@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 var ManifestPlugin = require("webpack-manifest-plugin");
+const webpack = require('webpack');
 
 module.exports = {
   mode: "development",
@@ -11,17 +12,19 @@ module.exports = {
   },
   devtool: "inline-source-map",
   devServer: {
-    contentBase: "./dist"
+    contentBase: "./dist",
+    hot: true
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "Caching"
     }),
-    new ManifestPlugin()
+    new ManifestPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
   output: {
-    filename: "[name].[contenthash].js",
+    filename: "[name].[hash].js",
     path: path.resolve(__dirname, "dist"),
     // chunkFilename: "[name].bundle.js"
     // publicPath: "/"

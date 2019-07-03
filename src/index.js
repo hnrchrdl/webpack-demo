@@ -1,4 +1,3 @@
-// import(/* webpackPrefetch: true */ "lodash")
 import print from "./print.js";
 
 function getComponent() {
@@ -8,8 +7,8 @@ function getComponent() {
     .then(({ default: _ }) => {
       const element = document.createElement("div");
 
-      element.innerHTML = _.join(["Hello", "webpack"], " ");
-      element.onclick = print.bind(null, 'Hello webpack!');
+      element.innerHTML = _.join(["Hello", "webpack!"], " ");
+      element.onclick = print.bind(null, "Hello webpack!");
 
       return element;
     })
@@ -19,3 +18,10 @@ function getComponent() {
 getComponent().then(component => {
   document.body.appendChild(component);
 });
+
+if (module.hot) {
+  module.hot.accept("./print.js", function() {
+    console.log("Accepting the updated printMe module!");
+    print();
+  });
+}
