@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
     "start": "webpack-dev-server --open",
+    "server": "node server.js",
     "build": "webpack"
   },
   "author": "",
@@ -15,6 +16,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.0.0",
     "csv-loader": "^3.0.2",
+    "express": "^4.17.1",
     "file-loader": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",
     "lodash": "^4.17.11",
