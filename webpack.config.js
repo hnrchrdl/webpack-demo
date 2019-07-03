@@ -14,15 +14,14 @@ module.exports = {
     contentBase: "./dist"
   },
   plugins: [
-    // new CleanWebpackPlugin(['dist/*']) for < v2 versions of CleanWebpackPlugin
-    // new CleanWebpackPlugin(),
-    // new HtmlWebpackPlugin({
-    //   title: "Development"
-    // }),
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: "Caching"
+    }),
     new ManifestPlugin()
   ],
   output: {
-    filename: "[name].bundle.js",
+    filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
     chunkFilename: '[name].bundle.js',
     // publicPath: "/"
