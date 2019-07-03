@@ -6,7 +6,7 @@ var ManifestPlugin = require("webpack-manifest-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    app: "./src/index.js",
+    app: "./src/index.js"
     // another: "./src/another-module.js"
   },
   devtool: "inline-source-map",
@@ -23,9 +23,22 @@ module.exports = {
   output: {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
-    chunkFilename: '[name].bundle.js',
+    // chunkFilename: "[name].bundle.js"
     // publicPath: "/"
   },
+  optimization: {
+    moduleIds: 'hashed',
+    runtimeChunk: "single",
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all"
+        }
+      }
+    }
+  }
   // optimization: {
   //   splitChunks: {
   //     chunks: "all"
